@@ -13,6 +13,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/emirpasic/gods/sets/hashset"
 	util "github.com/kelseyhightower/confd/util"
 	"github.com/kelseyhightower/memkv"
 )
@@ -44,6 +45,7 @@ func newFuncMap() map[string]interface{} {
 	m["reverse"] = Reverse
 	m["sortByLength"] = SortByLength
 	m["sortKVByLength"] = SortKVByLength
+	m["mkset"] = hashset.New
 	m["add"] = func(a, b int) int { return a + b }
 	m["sub"] = func(a, b int) int { return a - b }
 	m["div"] = func(a, b int) int { return a / b }
